@@ -4,7 +4,7 @@
     background-color: #dcdcdc;
     border-radius: 15px;
     position: relative;
-    height: 500px;
+    //height: 500px;
     line-height: 0.9; 
     width: 100%;
   }
@@ -14,19 +14,34 @@
   &__midText {
     font-size: 4rem;
     margin-top: 4px;
+    @media (max-width: 440px){
+      font-size: 3em;
+    }
   }
   &__largeText {
     color: white;
     font-size: 10em;
-    margin-left: -20px;
     text-transform: uppercase;
+    @media (max-width: 440px){
+      font-size: 6em;
+    }
   }
-  &__image{
+  &__image {
     position: absolute;
     top: 0%;
-    right:20%;
+    right: 7%;
     width: 450px;
     height: 450px;
+    @media (max-width: 969px){
+      top: -2%;
+      right: -6%;
+    }
+    @media (max-width: 800px){
+      transform: scale(0.8) translate(50px);
+    }
+    @media (max-width: 720px){
+      display: none;
+    }
   }
   &__btn {
     border-radius: 15px;
@@ -39,9 +54,14 @@
     font-weight: 500;
     cursor: pointer;
     z-index:10000 !important;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      border-radius: 7px;
+    }
   }
   &__desc {}
 }
+
 
 .descHeroBanner {
   position: absolute;

@@ -8,6 +8,7 @@ interface HomeProps {
 }
 
 const Home: FC<HomeProps> = ({ products, bannerData }) => {
+  console.log(products);
   return (
     <div className="products">
       <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
@@ -20,7 +21,7 @@ const Home: FC<HomeProps> = ({ products, bannerData }) => {
           <Product key={product} product={product} />
         ))}
       </div>
-      <FooterBanner footerBanner={bannerData.length && bannerData[0]}/>
+      <FooterBanner footerBanner={bannerData.length && bannerData[0]} />
     </div>
   );
 };
@@ -31,7 +32,7 @@ export const getServerSideProps = async () => {
 
   const bannerQuery = '*[_type == "banner"]';
   const bannerData = await client.fetch(bannerQuery);
-
+   
   return {
     props: { products, bannerData },
   };

@@ -20,10 +20,10 @@
   &__largeText {
     font-weight: 900;
     font-size: 80px;
-    margin-left: 25px;
+    padding-left: 15px;
   }
-  &__discount &__saleTime {
-    margin:18px;
+  &__discount, &__saleTime {
+    &:not(:last-child) {margin-bottom: 10px;}
   }
   &__right{
     line-height: 1.4;
@@ -34,6 +34,7 @@
   }
   &__smallText {
     font-size: 18px;
+    &:not(:last-child) {margin-bottom: 10px;}
   }
   &__desc{
     font-size: 14px;
@@ -49,6 +50,11 @@
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
+    transition: all 0.3s ease 0s;
+    z-index: 10000 !important;
+    &:hover {
+      border-radius: 7px;
+    }
   }
   &__image {
     position: absolute;

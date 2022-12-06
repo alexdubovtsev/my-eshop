@@ -109,7 +109,7 @@ a {
 }
 
 
- .cart-heading{
+.cart-heading{
   display: flex;
   align-items: center;
   font-size: 18px;
@@ -140,6 +140,7 @@ a {
 .cancel{
   cursor: pointer;
 }
+
 .product-container{
   margin-top: 15px;
   overflow: auto;
@@ -220,44 +221,10 @@ padding: 30px 65px;
 .btn:hover{
   transform: scale(1.1,1.1);
 }
-.product-detail-container{
-  display: flex;
- gap: 40px;
- margin: 40px;
- margin-top: 60px;
- color: #324d67;
 
-}
 
-.product-detail-image{
-  border-radius: 15px;
-   background-color: #ebebeb;
 
-  width: 400px;
-  height: 400px;
-  cursor: pointer;
-  transition: .3s ease-in-out;
-}
-.product-detail-image:hover{
-  background-color: #f02d34;
 
-}
-.small-images-container{
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-}
-.small-image{
-  border-radius: 8px;
-  background-color: #ebebeb;
-  width: 70px;
-  height: 70px;
-  cursor: pointer;
-}
-
-.selected-image{
-  background-color:#f02d34;
-}
 .reviews{
   color: #f02d34;
   margin-top: 10px;
@@ -306,7 +273,7 @@ padding: 30px 65px;
   color: #f02d34;
   cursor: pointer;
   width: 200px;
-   transform: scale(1, 1);
+  transform: scale(1, 1);
   transition: transform 0.5s ease;
 }
 .buttons .add-to-cart:hover{
@@ -314,7 +281,6 @@ padding: 30px 65px;
 }
 .buttons .buy-now{
   width: 200px;
-
   padding: 10px 20px;
   background-color: #f02d34;
   color: white;
@@ -323,7 +289,7 @@ padding: 30px 65px;
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
-   transform: scale(1, 1);
+  transform: scale(1, 1);
   transition: transform 0.5s ease;
 }
 .buttons .buy-now:hover{
@@ -331,7 +297,7 @@ padding: 30px 65px;
 }
 .quantity-desc{
   border: 1px solid gray;
-padding: 6px;
+  padding: 6px;
 }
 .quantity-desc span{
   font-size: 16px;
@@ -348,7 +314,6 @@ padding: 6px;
 }
 .quantity-desc .plus{
   color: rgb(49, 168, 49);
-
 }
 
 .maylike-products-wrapper{
@@ -358,7 +323,6 @@ padding: 6px;
   text-align: center;
   margin: 50px;
   color: #324d67;
-
   font-size: 28px;
 }
 .maylike-products-container{
@@ -374,12 +338,11 @@ padding: 6px;
 .success-wrapper, .cancel-wrapper{
   background-color: white;
   min-height: 60vh;
-
 }
 .success, .cancel{
   width: 1000px;
-margin: auto;
-margin-top: 160px;
+  margin: auto;
+  margin-top: 160px;
   background-color: #dcdcdc;
   padding: 50px;
   border-radius: 15px;
@@ -401,7 +364,7 @@ margin-top: 160px;
   color:#324d67;
 }
 .success .email-msg{
-   font-size: 16px;
+  font-size: 16px;
   font-weight: 600;
   text-align: center;
 }
@@ -425,15 +388,7 @@ margin-top: 160px;
 }
 
 @media screen and (max-width:800px) {
-  .hero-banner-container{
-    height: 560px;
-  }
-  .hero-banner-image{
-    width: 77%;
-    height: 62%;
-    top: -2%;
-    right: -6%;
-  }
+
   .footer-banner-container{
     height: 560px;
     margin-top: 80px;

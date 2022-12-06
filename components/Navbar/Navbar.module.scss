@@ -10,17 +10,24 @@
     color: gray;
     font-size: 22px;
     font-weight: 500;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      color: #f02d34;
+    }
   }
   &__cartIcon {
     font-size: 25px;
     color: gray;
     cursor: pointer;
     position: relative;
-    transition: transform .4s ease;
+    transition: all 0.3s ease 0s;
     border: none;
     background-color: transparent;
     &:hover {
-      transform: scale(1.1,1.1);
+      color: #f02d34;
+      .navbar__itemQty {
+        transform: scale(1.1,1.1);
+      }
     }
   }
   &__itemQty {
@@ -34,5 +41,6 @@
     border-radius: 50%;
     text-align: center;
     font-weight: 600;
+    transition: all 0.3s ease 0s;
   }
 }
