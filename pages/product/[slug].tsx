@@ -5,6 +5,7 @@ import {
   AiFillStar,
   AiOutlineStar,
 } from "react-icons/ai";
+import { Product } from "../../components";
 
 import client, { urlFor } from "../../lib/client";
 import classes from "./product.module.scss";
@@ -20,9 +21,10 @@ const ProductDetail: FC<ProductDetailProps> = ({ product, products }) => {
 
   return (
     <div className={classes.productDetail}>
-      <div className={classes.productDetail__container}>
-        <div className={`${classes.productDetail__images} ${classes.imagesProductDetail}`}>
-
+      <div className={classes.productDetail__body}>
+        <div
+          className={`${classes.productDetail__images} ${classes.imagesProductDetail}`}
+        >
           <div className={classes.imagesProductDetail__mainImageContainer}>
             <img
               src={urlFor(image && image[index])}
@@ -36,13 +38,84 @@ const ProductDetail: FC<ProductDetailProps> = ({ product, products }) => {
                 key={i}
                 src={urlFor(item)}
                 className={
-                  i === index ? `${classes.imagesProductDetail__smallImage} ${classes.imagesProductDetail__selectedImage}` : classes.imagesProductDetail__smallImage
+                  i === index
+                    ? `${classes.imagesProductDetail__smallImage} ${classes.imagesProductDetail__selectedImage}`
+                    : classes.imagesProductDetail__smallImage
                 }
                 onMouseEnter={() => setIndex(i)}
               />
             ))}
           </div>
+        </div>
 
+        <div
+          className={`${classes.productDetail__desc} ${classes.descProductDetail}`}
+        >
+          <h1 className={classes.descProductDetail__name}>{name}</h1>
+          <div className={classes.descProductDetail__reviews}>
+            <div>
+              <AiFillStar />
+              <AiFillStar />
+              <AiFillStar />
+              <AiFillStar />
+              <AiOutlineStar />
+            </div>
+            <p>(20)</p>
+          </div>
+          <h4 className={classes.descProductDetail__detailsTitle}>Details: </h4>
+          <p className={classes.descProductDetail__detailsText}>{details}</p>
+          <p className={classes.descProductDetail__price}>${price}</p>
+
+          <div
+            className={`${classes.descProductDetail__quantity} ${classes.quantityProductDetail}`}
+          >
+            <h3>Quantity:</h3>
+            <p className={classes.quantityProductDetail__buttons}>
+              <span className={classes.quantityProductDetail__minus} onClick="">
+                <AiOutlineMinus />
+              </span>
+              <span className={classes.quantityProductDetail__num} onClick="">
+                0
+              </span>
+              <span className={classes.quantityProductDetail__plus} onClick="">
+                <AiOutlinePlus />
+              </span>
+            </p>
+          </div>
+
+          <div className={classes.descProductDetail__cartButtons}>
+            <button
+              type="button"
+              className={classes.descProductDetail__cartButtonAdd}
+              onClick=""
+            >
+              Add to Cart
+            </button>
+            <button
+              type="button"
+              className={classes.descProductDetail__cartButtonBuy}
+              onClick=""
+            >
+              Buy now
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className={`${classes.productDetail__maylike} ${classes.maylikeProductDetail}`}
+      >
+        <h1 className={classes.maylikeProductDetail__title}>
+          You may also like
+        </h1>
+        <div className={classes.maylikeProductDetail__marquee}>
+          <div
+            className={`${classes.maylikeProductDetail__products} ${classes.track}`}
+          >
+            {products.map((item) => (
+              <Product key={item._id} product={item} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
