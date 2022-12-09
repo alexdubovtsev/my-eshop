@@ -1,4 +1,5 @@
 import React, { FC, useState } from "react";
+import classes from "./product.module.scss";
 import {
   AiOutlineMinus,
   AiOutlinePlus,
@@ -6,9 +7,8 @@ import {
   AiOutlineStar,
 } from "react-icons/ai";
 import { Product } from "../../components";
-
 import client, { urlFor } from "../../lib/client";
-import classes from "./product.module.scss";
+import { useStateContext } from "../../context/StateContext";
 
 interface ProductDetailProps {
   products: any[];
@@ -18,6 +18,7 @@ interface ProductDetailProps {
 const ProductDetail: FC<ProductDetailProps> = ({ product, products }) => {
   const { image, name, details, price } = product;
   const [index, setIndex] = useState(0);
+  const { incQuantity, decQuantity, quantity, onAdd } = useStateContext();
 
   return (
     <div className={classes.productDetail}>
@@ -71,13 +72,19 @@ const ProductDetail: FC<ProductDetailProps> = ({ product, products }) => {
           >
             <h3>Quantity:</h3>
             <p className={classes.quantityProductDetail__buttons}>
-              <span className={classes.quantityProductDetail__minus} onClick="">
+              <span
+                className={classes.quantityProductDetail__minus}
+                onClick={decQuantity}
+              >
                 <AiOutlineMinus />
               </span>
               <span className={classes.quantityProductDetail__num} onClick="">
-                0
+                {quantity}
               </span>
-              <span className={classes.quantityProductDetail__plus} onClick="">
+              <span
+                className={classes.quantityProductDetail__plus}
+                onClick={incQuantity}
+              >
                 <AiOutlinePlus />
               </span>
             </p>
@@ -87,7 +94,7 @@ const ProductDetail: FC<ProductDetailProps> = ({ product, products }) => {
             <button
               type="button"
               className={classes.descProductDetail__cartButtonAdd}
-              onClick=""
+              onClick={() => onAdd(product, quantity)}
             >
               Add to Cart
             </button>
