@@ -47,7 +47,6 @@ a {
   }
 }
 
-
 .marquee-text{
   font-size: 29px;
   font-weight: 600;
@@ -55,78 +54,111 @@ a {
   color: #f02d34;
 }
 
-
-span.text-red {
-  -webkit-text-stroke: 1px #f02d34;
-  margin-left: 6px;
-}
-
-
-.cancel{
-  cursor: pointer;
-}
-
-
-.price .old-price, .product-price .old-price, .price .old-price{
-  color: gray;
-  text-decoration: line-through;
-}
-
-.max-qty{
-  font-weight: 500;
-  color: #f02d34;
-}
-.success-wrapper, .cancel-wrapper{
+.success {
   background-color: white;
   min-height: 60vh;
-}
-.success, .cancel{
-  width: 1000px;
-  margin: auto;
-  margin-top: 160px;
-  background-color: #dcdcdc;
-  padding: 50px;
-  border-radius: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  &__body {
+    width: 1000px;
+    margin: auto;
+    margin-top: 160px;
+    background-color: #dcdcdc;
+    padding: 50px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__icon {
+    color: rgb(36, 180, 36);
+    font-size: 40px;
+  }
+  &__thx {
+    text-transform: capitalize;
+    margin-top: 15px 0px;
+    font-weight: 900;
+    font-size: 40px;
+    color:#324d67;
+  }
+  &__emailMsg {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+  }
+  &__description {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    margin: 10px;
+    margin-top: 30px;
+  }
+  &__help {
+    color: #f02d34;
+    @media (any-hover: hover){
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+  &__button {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px 12px;
+    border-radius: 15px;
+    border: none;
+    font-size: 20px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    background-color: #f02d34;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover){
+      &:hover{
+        border-radius: 7px;
+      }
+    }
+  }
 }
 
-.success .icon {
-   color: green;
-   font-size: 40px;
-}
-.success h2{
-  text-transform: capitalize;
-  margin-top: 15px 0px;
-  font-weight: 900;
-  font-size: 40px;
-  color:#324d67;
-}
-.success .email-msg{
-  font-size: 16px;
-  font-weight: 600;
-  text-align: center;
-}
-.cancel p{
-  font-size: 20px;
-  font-weight: 600;
-}
-.success .description{
-  font-size: 16px;
-  font-weight: 600;
-  text-align: center;
-  margin: 10px;
-  margin-top: 30px;
-}
-.success .description .email{
-  margin-left: 5px;
-  color: #f02d34;
-}
-.product-max-qty{
-  margin-top: 10px;
-}
+// .cancel-wrapper{
+//   background-color: white;
+//   min-height: 60vh;
+// }
+
+// .cancel{
+//   width: 1000px;
+//   margin: auto;
+//   margin-top: 160px;
+//   background-color: #dcdcdc;
+//   padding: 50px;
+//   border-radius: 15px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+// }
+
+// .cancel p{
+//   font-size: 20px;
+//   font-weight: 600;
+// }
+
+// span.text-red {
+//   -webkit-text-stroke: 1px #f02d34;
+//   margin-left: 6px;
+// }
+
+// .price .old-price, .product-price .old-price, .price .old-price{
+//   color: gray;
+//   text-decoration: line-through;
+// }
+
+// .max-qty{
+//   font-weight: 500;
+//   color: #f02d34;
+// }
+
 
 @media screen and (max-width:800px) {
 

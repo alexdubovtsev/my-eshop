@@ -112,9 +112,11 @@ const Cart = () => {
               <h3 className={classes.bottomCart__text}>Subtotal:</h3>
               <h3 className={classes.bottomCart__totalPrice}>${totalPrice}</h3>
             </div>
-            <button type="button" className={classes.cart__Button} onClick="">
-              Buy now
-            </button>
+            <Link href="/success">
+              <button type="button" className={classes.cart__Button}>
+                Buy now
+              </button>
+            </Link>
           </div>
         )}
       </div>
