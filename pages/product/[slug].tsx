@@ -18,7 +18,8 @@ interface ProductDetailProps {
 const ProductDetail: FC<ProductDetailProps> = ({ product, products }) => {
   const { image, name, details, price } = product;
   const [index, setIndex] = useState(0);
-  const { incQuantity, decQuantity, quantity, onAdd } = useStateContext();
+  const { incQuantity, decQuantity, quantity, onAdd, setShowCart } =
+    useStateContext();
 
   return (
     <div className={classes.productDetail}>
@@ -78,7 +79,7 @@ const ProductDetail: FC<ProductDetailProps> = ({ product, products }) => {
               >
                 <AiOutlineMinus />
               </span>
-              <span className={classes.quantityProductDetail__num} onClick="">
+              <span className={classes.quantityProductDetail__num}>
                 {quantity}
               </span>
               <span
@@ -101,7 +102,10 @@ const ProductDetail: FC<ProductDetailProps> = ({ product, products }) => {
             <button
               type="button"
               className={classes.descProductDetail__cartButtonBuy}
-              onClick=""
+              onClick={() => {
+                onAdd(product, quantity);
+                setShowCart(true);
+              }}
             >
               Buy now
             </button>

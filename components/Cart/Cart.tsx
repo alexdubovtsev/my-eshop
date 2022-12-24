@@ -113,7 +113,7 @@ const Cart = () => {
               <h3 className={classes.bottomCart__totalPrice}>${totalPrice}</h3>
             </div>
             <button type="button" className={classes.cart__Button} onClick="">
-              Pay with Stripe
+              Buy now
             </button>
           </div>
         )}
